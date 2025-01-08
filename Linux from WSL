@@ -24,3 +24,69 @@ sudo systemctl stop apache2
 sudo systemctl start apache2
 Перезапуск apache
 sudo systemctl restart apache2
+Перезагрузка apache без сброса соединений
+sudo systemctl reload apache2
+Удаление автозагрузки сервиса apache из запуска сервера
+sudo systemctl disable apache2
+Добавить в автозагрузку
+sudo systemctl enable apache2
+-----------------------------
+Настройка виртуальных хостов
+Создание каталога для your_domain
+sudo mkdir /var/www/your_domain
+Указание прав на каталог с помощью переменной $USER
+sudo chown -R $USER:$USER /var/www/your_domain
+Проверка прав на каталог
+sudo chmod -R 755 /var/www/your_domain
+Создание тестовой страницы
+sudo nano /var/www/your_domain/index.html
+Вставить через nano код:
+<html>
+    <head>
+        <title>Welcome to Your_domain!</title>
+    </head>
+    <body>
+        <h1>Success!  The your_domain virtual host is working!</h1>
+    </body>
+</html>
+Создание конфигурации сервера под свой домен
+sudo nano /etc/apache2/sites-available/your_domain.conf
+Например настройки:
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName your_domain
+    ServerAlias www.your_domain
+    DocumentRoot /var/www/your_domain
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+Включить файл
+sudo a2ensite your_domain.conf
+Отключить файл настроек по умолчанию
+sudo a2dissite 000-default.conf
+Проверка на ошибки
+sudo apache2ctl configtest
+Должен быть такой вывод
+Syntax OK
+Перезапуск apache
+sudo systemctl restart apache2
+Перейти на http://your_domain и увидеть там примерно такое
+Success! The your_domain virtual host is working!
+-----------------------------
+Важные файлы
+Контент
+
+/var/www/html: Фактический веб-контент, который по умолчанию состоит только из стандартной страницы Apache (ранее вы её уже видели), обслуживается из каталога /var/www/html. Это можно изменить, внеся корректировки в файлы конфигурации Apache.
+Настройка сервера
+
+/etc/apache2: каталог конфигурации Apache. Все файлы настроек Apache находятся здесь.
+/etc/apache2/apache2.conf: основной файл настройки Apache. Его можно корректировать для внесения изменений в глобальную конфигурацию Apache. Этот файл отвечает за загрузку многих других файлов в каталоге конфигурации.
+/etc/apache2/ports.conf: В этом файле указаны порты, которые прослушивает Apache. По умолчанию Apache прослушивает порт 80 и дополнительно порт 443, если включен SSL.
+/etc/apache2/sites-available/: каталог, в котором могут храниться виртуальные хосты для каждого сайта. Apache не будет использовать файлы настроек из этого каталога, если они не связаны с каталогом sites-enabled. Обычно вся конфигурация блока выполняется в этом каталоге, а затем включается путем ссылки на другой каталог с помощью команды a2ensite.
+/etc/apache2/sites-enabled/: каталог, в котором хранятся включенные виртуальные хосты для каждого сайта. Обычно они создаются по ссылке на файлы настроек из каталога sites-available с помощью команды a2ensite. Apache считывает конфигурационные файлы и ссылки, находящиеся в этом каталоге, при запуске или перезагрузке для компиляции полной настройки.
+/etc/apache2/conf-available/, /etc/apache2/conf-enabled/: Эти каталоги имеют те же отношения, что и каталоги sites-available и sites-enabled, но используются для хранения фрагментов настроек, которые не принадлежат виртуальному хосту. Файлы в каталоге conf-available можно включить с помощью команды a2enconf, а отключить – a2disconf.
+/etc/apache2/mods-available/, /etc/apache2/mods-enabled/: эти каталоги содержат доступные и включенные модули соответственно. Файлы, заканчивающиеся на .load, содержат фрагменты для загрузки определенных модулей, а которые заканчиваются на .conf, содержат настройки этих модулей. Модули можно включать и отключать с помощью команд a2enmod и a2dismod.
+Логи сервера
+
+/var/log/apache2/access.log: каждый запрос к вашему веб-серверу записывается в этот лог по умолчанию, если Apache не настроен иначе.
+/var/log/apache2/error.log: по умолчанию все ошибки записываются в этот файл. Директива LogLevel в конфигурации Apache определяет, насколько подробную информацию будут содержать журналы ошибок.
