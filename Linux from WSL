@@ -11,3 +11,16 @@ wsl --install Ubuntu-24.04
 sudo apt install apache2
 \\wsl.localhost\Ubuntu-24.04\etc\apache2 - каталог установки
 \\wsl.localhost\Ubuntu-24.04\var\www - каталог доменов
+Проверка статуса web-сервера apache
+sudo systemctl status apache2
+Внешний ip-адрес web-сервера
+hostname -I
+Или через внешний сервис
+curl -4 icanhazip.com
+http://your_server_ip - стандартная страница для проверки запущен ли сервер apache
+Остановить apache
+sudo systemctl stop apache2
+Запустить apache
+sudo systemctl start apache2
+Перезапуск apache
+sudo systemctl restart apache2
