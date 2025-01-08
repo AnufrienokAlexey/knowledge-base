@@ -7,3 +7,7 @@ wsl --list --verbose
 wsl.exe --list --online
 Установка Ubuntu-24.04
 wsl --install Ubuntu-24.04
+Установка apache
+sudo apt install apache2
+\\wsl.localhost\Ubuntu-24.04\etc\apache2 - каталог установки
+\\wsl.localhost\Ubuntu-24.04\var\www - каталог доменов
