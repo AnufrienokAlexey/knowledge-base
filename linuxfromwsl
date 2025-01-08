@@ -1,0 +1,9 @@
+Запустить в PowerShell
+Обновить wsl
+wsl --update
+Показать список установленных дистрибутивов
+wsl --list --verbose
+Показать список доступных онлайн дистрибутивов для установки
+wsl.exe --list --online
+Установка Ubuntu-24.04
+wsl --install Ubuntu-24.04
