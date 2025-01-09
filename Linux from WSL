@@ -1,5 +1,6 @@
 Установка Ubuntu через WSL
 Запустить в PowerShell
+wsl --install
 Обновить wsl
 wsl --update
 Показать список установленных дистрибутивов
