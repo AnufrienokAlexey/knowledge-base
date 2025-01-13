@@ -4,3 +4,4 @@ ssh -V
 ssh-keygen -t ed25519 -C "your_email@example.com"
 /home/alexey/.ssh - папка скрыта по умолчанию
 ssh -T git@github.com
+sudo apt install composer
