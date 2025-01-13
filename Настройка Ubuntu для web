@@ -31,3 +31,4 @@ sudo a2disconf php8.2-fpm
 # удаляем старую версию если надо
 sudo apt purge php8.2*
 
+composer config -g -- disable-tls true
