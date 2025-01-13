@@ -1,0 +1,3 @@
+Для правильной работы звука добавляем строчку в файл /etc/modprobe.d/alsa-base.conf
+#options snd-hda-intel model=generic
+options snd-hda-intel dmic_detect=0
