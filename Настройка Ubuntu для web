@@ -34,3 +34,28 @@ sudo apt purge php8.2*
 composer config -g -- disable-tls true
 
 sudo apt install mysql-server
+sudo service mysql start
+2. Подключимся к серверу MySQL под стандартным пользователем root, который создаётся при установке MySQL на компьютер:
+
+sudo mysql -uroot -p
+3. Нажмём на Еnter, т.к. по умолчанию пользователь root, созданный при установке, не имеет пароля.
+
+4. Проверим метод аутентификации, который используется для пользователя root.
+
+SELECT user, authentication_string, plugin, host FROM mysql.user WHERE user="root";
+Если пользователь использует аутентификацию с помощью плагина auth_socket, то изменим эту настройку на использование пустого пароля. Для этого введём команду:
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
+Изменение метода аутентификации MySQL пользователя root
+Выполним команду FLUSH PRIVILEGES, которая применит внесённые изменения:
+
+FLUSH PRIVILEGES;
+
+CREATE DATABASE testru;
+Если в базу данных testru необходимо загрузить дамп некоторой базы, находящийся, например, в файле backup.sql, то можно воспользоваться следующими инструкциями:
+
+use testru;
+source backup.sql;
+Для завершения работы с командной строкой MySQL выйдем из неё:
+
+exit
