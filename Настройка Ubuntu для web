@@ -32,3 +32,5 @@ sudo a2disconf php8.2-fpm
 sudo apt purge php8.2*
 
 composer config -g -- disable-tls true
+
+sudo apt install mysql-server
