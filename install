@@ -1,2 +1,8 @@
+sudo apt update && apt upgrade -y
 sudo apt install ./Yandex.deb
 sudo apt install git
+ssh -V
+ssh-keygen -t ed25519 -C "your_email@example.com"
+/root/.ssh - папка скрыта по умолчанию
+sudo ssh -T git@github.com       -> yes
+sudo apt install composer
