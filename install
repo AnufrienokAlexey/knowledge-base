@@ -10,3 +10,6 @@ sudo apt install apache2
 
 Если index.php читается как текст
 sudo apt update && sudo apt install php libapache2-mod-php
+
+sudo apt install snapd -y
+sudo snap install postman
