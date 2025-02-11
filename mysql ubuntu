@@ -39,6 +39,9 @@ extension=pdo_mysql
 coudnt found driver!
 sudo apt-get install php-mysql
 sudo service apache2 restart
+Будут установлены следующие дополнительные пакеты:
+  php8.3-mysql
+
 
 
 Создание настроенной конфигурации
