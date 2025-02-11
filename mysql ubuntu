@@ -12,7 +12,7 @@ sudo systemctl restart mysql.service
 sudo service mysql stop
 sudo systemctl start mysql.service
 
-
+Подключение к MySQL. Для этого нужно ввести команду mysql -u <имя_пользователя> -p. Ключ u указывает имя пользователя, p — запрос пароля. Например, чтобы подключиться как суперпользователь, нужно использовать команду mysql -u root -p
 
 
 
