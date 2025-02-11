@@ -22,7 +22,14 @@ SHOW DATABASES;
 CREATE DATABASE cloud_storage;
 USE cloud_database;
 
+select user, host from mysql.user;
+create user 'user'@'localhost' IDENTIFIED BY 'user';
 
+allowPublicKeyRetrieval = TRUE; (dbweawer)
+drop user `user_name`@`%`;
+
+GRANT ALL PRIVILEGES ON cloud_storage TO `root`@`localhost` WITH GRANT OPTION;
+FLUSH PRIVILEGES;
 
 
 Создание настроенной конфигурации
