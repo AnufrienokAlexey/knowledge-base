@@ -36,6 +36,10 @@ FLUSH PRIVILEGES;
 php.ini /etc/php/apache2/8.3
 extension=pdo_mysql
 
+coudnt found driver!
+sudo apt-get install php-mysql
+sudo service apache2 restart
+
 
 Создание настроенной конфигурации
 Существует ряд параметров, которые можно настроить в файлах конфигурации MySQL. Это позволит вам со временем повысить производительность сервера.
