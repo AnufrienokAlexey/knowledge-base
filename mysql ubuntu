@@ -32,6 +32,10 @@ GRANT ALL PRIVILEGES ON cloud_storage TO `root`@`localhost` WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON `cloud_storage` TO `user`@`localhost` WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
+/test.php
+php.ini /etc/php/apache2/8.3
+extension=pdo_mysql
+
 
 Создание настроенной конфигурации
 Существует ряд параметров, которые можно настроить в файлах конфигурации MySQL. Это позволит вам со временем повысить производительность сервера.
