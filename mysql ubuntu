@@ -18,6 +18,7 @@ sudo systemctl start mysql.service
 
 SHOW DATABASES;
 CREATE DATABASE cloud_storage;
+USE cloud_database;
 
 
 
