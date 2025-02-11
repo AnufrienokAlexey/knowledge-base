@@ -16,6 +16,9 @@ sudo systemctl start mysql.service
 Ключ u указывает имя пользователя, p — запрос пароля. 
 Например, чтобы подключиться как суперпользователь, нужно использовать команду mysql -u root -p
 
+SHOW DATABASES;
+CREATE DATABASE cloud_storage;
+
 
 
 
