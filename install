@@ -19,3 +19,5 @@ sudo a2enmod rewrite
 
 Ввести текстовую команду sudo apt install xrdp и нажать «Ввод».
 Провести активацию программы командой sudo systemctl enable xrdp.
+
+sudo apt install postgresql
