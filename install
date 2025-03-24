@@ -21,3 +21,8 @@ sudo a2enmod rewrite
 Провести активацию программы командой sudo systemctl enable xrdp.
 
 sudo apt install postgresql
+
+
+Смена владельца папки решила мою проблему:
+
+sudo chown -R system-name project-folder-location
