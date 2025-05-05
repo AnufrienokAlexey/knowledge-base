@@ -30,6 +30,9 @@ drop user `user_name`@`%`;
 
 GRANT ALL PRIVILEGES ON cloud_storage TO `root`@`localhost` WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON `cloud_storage` TO `user`@`localhost` WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' WITH GRANT OPTION;
+
 FLUSH PRIVILEGES;
 
 /test.php
