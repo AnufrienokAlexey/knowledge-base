@@ -3,3 +3,6 @@ wget -c https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.27.3.14493.ta
 sudo tar -xzf jetbrains-toolbox-1.27.3.14493.tar.gz -C /opt
 /opt/jetbrains-toolbox-1.27.3.14493/jetbrains-toolbox
 sudo apt-get install -y libfuse2
+
+VPN
+https://adguard-vpn.com/en/linux/overview.html
