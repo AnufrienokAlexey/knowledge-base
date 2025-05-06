@@ -26,3 +26,7 @@ sudo apt install postgresql
 Смена владельца папки решила мою проблему:
 
 sudo chown -R system-name project-folder-location
+
+/var/www/cloud_storage/.git/config
+[remote "origin"]
+	url = git@github.com:AnufrienokAlexey/cloud_storage.git
