@@ -1,11 +1,21 @@
+Версия PHP
 php -v
+
+Версия composer
 composer --version
+
+Версия Node
 node -v
+
+Версия Npm
 npm -v
 
+Создать проект Laravel
 composer create-project laravel/laravel example-app
+Перейти в проект
+cd ./example-app
 
-
+Создать проект Vite
 npm create vite@latest
 
 
