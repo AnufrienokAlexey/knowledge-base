@@ -15,6 +15,10 @@ composer create-project laravel/laravel example-app
 Перейти в проект
 cd ./example-app
 
+подключение к БД в .env сменить драйвер подключения и раскомментировать настройки подключения
+php artisan migrate
+
+
 Создать проект Vite
 npm create vite@latest
 
