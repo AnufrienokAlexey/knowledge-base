@@ -7,3 +7,6 @@ composer create-project laravel/laravel example-app
 
 
 npm create vite@latest
+
+
+npm run dev
