@@ -22,3 +22,5 @@ npm create vite@latest
 npm run dev
 npm update
 npm install
+npm build
+npm preview
