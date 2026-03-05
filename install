@@ -30,3 +30,11 @@ sudo chown -R system-name project-folder-location
 /var/www/cloud_storage/.git/config
 [remote "origin"]
 	url = git@github.com:AnufrienokAlexey/cloud_storage.git
+_________________________
+.gitconfig
+[safe]
+	directory = /home/i/ipa****/final*********laravel
+[user]
+	email = тут емаил
+	name = тут имя фамилия
+_________________________
