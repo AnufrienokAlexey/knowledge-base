@@ -1,3 +1,17 @@
 Для правильной работы звука добавляем строчку в файл /etc/modprobe.d/alsa-base.conf
-#options snd-hda-intel model=generic
+options snd-hda-intel model=generic
 options snd-hda-intel dmic_detect=0
+
+sudo lspci
+alsamixer
+lsof /dev/snd/*
+
+systemctl restart --user pipewire.service
+systemctl restart --user wireplumber.service
+systemctl status --user pipewire.service
+systemctl status --user wireplumber.service
+sudo alsa force-reload
+
+Переустановить
+sudo apt-get remove --purge alsa-base pipewire
+sudo apt-get install alsa-base pipewire
