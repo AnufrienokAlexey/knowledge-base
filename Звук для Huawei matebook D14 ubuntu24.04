@@ -15,3 +15,8 @@ sudo alsa force-reload
 Переустановить
 sudo apt-get remove --purge alsa-base pipewire
 sudo apt-get install alsa-base pipewire
+
+!!!
+sudo apt remove --purge alsa-base pulseaudio
+``` 
+sudo apt install alsa-base pulseaudio
