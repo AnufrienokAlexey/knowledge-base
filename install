@@ -40,3 +40,10 @@ _________________________
 _________________________
 snap search telegramm
 snap install telegram-desktop
+
+alexey@alexey-NBD-WXX9:/var/www/bitrix-test$ sudo a2enmod rewrite
+Enabling module rewrite.
+To activate the new configuration, you need to run:
+  systemctl restart apache2
+alexey@alexey-NBD-WXX9:/var/www/bitrix-test$ sudo systemctl restart apache2
+
