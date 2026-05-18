@@ -41,6 +41,7 @@ _________________________
 snap search telegramm
 snap install telegram-desktop
 
+mod_rewrite	Установлен:
 alexey@alexey-NBD-WXX9:/var/www/bitrix-test$ sudo a2enmod rewrite
 Enabling module rewrite.
 To activate the new configuration, you need to run:
